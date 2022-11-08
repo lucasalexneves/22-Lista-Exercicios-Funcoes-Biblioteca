@@ -18,6 +18,33 @@ let idioma = []
 let index = 0
 let indexId = 0
 
+let continuar = true
+
+while(continuar){
+    let opcao = prompt("Insira uma opção que deseja executar: 1- Cadastrar livro, 2 - Exibir livros de um autor, 3 - Exibir livros de um ano, 4 - Exibir livros de um autor a partir de um determinado ano, 5 - Bucar livro e trazer em outros idiomas, 6 - Exibir livros de determinado idioma, 7 - Exibir livros ordenados por ano, 8 - Encerrar")
+
+    if(opcao == "1"){
+        CadastrarLivro()
+        console.log("Livro cadastrado com sucesso!")
+    } else if (opcao == "2"){
+        let autor = prompt("Digite o nome do autor que deseja buscar")
+        BuscarPorAutor(autor)
+    } else if (opcao == "3"){
+        let DeterminadoAno = prompt("Digite o ano que deseja exibir os livros")
+        BuscarPorAno(DeterminadoAno)
+    } else if(opcao == "4"){
+
+    } else if(opcao == "5"){
+
+    } else if(opcao == "6"){
+
+    } else if(opcao == "7"){
+
+    } else if(opcao == "8"){
+        continuar = false
+    }
+}
+
 function CadastrarLivro() {
     ids[index] = indexId + 1
     titulos[index] = prompt("Insira o Título do livro:")
@@ -39,9 +66,21 @@ function BuscarPorAutor(autor){
 function BuscarPorAno(DeterminadoAno){
     for (let index = 0; index < ano.length; index++) {
         if(DeterminadoAno == ano[index]){
-            console.log("Os livros desse ano são: " + ano)
+            console.log("Os livros desse ano são: " + titulos)
         }        
     }
 }
+
+function BuscarTodosLivrosAutor(autor2, anoAutor2){
+    for (let index = 0; index < autores.length; index++) {
+        if(autor2 == autores[index] && anoAutor2 < 2022){
+            console.log("Os livros do autor " + autor2 + " desde o ano " + anoAutor2 + " são: "  + titulos) 
+        }
+        
+    }
+}
+
+
+
 
 
